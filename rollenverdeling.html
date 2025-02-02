@@ -28,6 +28,11 @@
         }
         .content {
             margin: 20px;
+            display: flex; /* Flexbox container */
+            justify-content: space-between; /* Plaatst rechters links en advocaten rechts */
+        }
+        .team-column {
+            width: 48%; /* Breedte van elke kolom */
         }
         .team-member {
             background-color: #fff;
@@ -60,6 +65,14 @@
             width: 100%;
             bottom: 0;
         }
+        @media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Kolommen onder elkaar */
+    }
+    .team-column {
+        width: 100%; /* Volledige breedte op kleine schermen */
+    }
+}
     </style>
 </head>
 <body>
@@ -72,39 +85,41 @@
         <a href="rollenverdeling.html">Rollen Verdeling</a>
     </nav>
 
-   <div class="content">
-        <!-- Rechter 1 -->
-        <div class="team-member">
-            <img src="rechter1.png" alt="Rechter 1">
-            <div>
-                <h3>Rechter Arens</h3>
-                <p><strong>Discord:</strong> oscar20224</p>
-                <p><strong>In-Game Naam:</strong> ScarEatSchnitzel</p>
+    <div class="content">
+        <!-- Rechters Kolom (Links) -->
+        <div class="team-column">
+            <div class="team-member">
+                <img src="rechter1.png" alt="Rechter 1">
+                <div>
+                    <h3>Rechter Arens</h3>
+                    <p><strong>Discord:</strong> oscar20224</p>
+                    <p><strong>In-Game Naam:</strong> ScarEatSchnitzel</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="rechter2.png" alt="Rechter 2">
+                <div>
+                    <h3>Rechter Teunissen</h3>
+                    <p><strong>Discord:</strong> _stanneman29</p>
+                    <p><strong>In-Game Naam:</strong> _stanneman29</p>
+                </div>
             </div>
         </div>
 
-        <!-- Rechter 2 -->
-        <div class="team-member">
-            <img src="rechter2.png" alt="Rechter 2">
-            <div>
-                <h3>Rechter Teunissen</h3>
-                <p><strong>Discord:</strong> _stanneman29</p>
-                <p><strong>In-Game Naam:</strong> _stanneman29</p>
+        <!-- Advocaten Kolom (Rechts) -->
+        <div class="team-column">
+            <div class="team-member">
+                <img src="advocaat1.png" alt="Advocaat 1">
+                <div>
+                    <h3>Advocaat Folker</h3>
+                    <p><strong>Discord:</strong> enbfolke</p>
+                    <p><strong>In-Game Naam:</strong> enbfolke</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Advocaat 1 -->
-        <div class="team-member">
-            <img src="advocaat1.png" alt="Advocaat 1">
-            <div>
-                <h3>Advocaat Folker</h3>
-                <p><strong>Discord:</strong> enbfolke</p>
-                <p><strong>In-Game Naam:</strong> enbfolke</p>
-            </div>
+            <!-- Voeg hier meer advocaten toe -->
         </div>
-
-        <!-- Advocaat 2 -->
-        
     </div>
     <footer>
         &copy; 2025 Minebef Server
