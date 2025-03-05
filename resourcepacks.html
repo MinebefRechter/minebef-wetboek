@@ -1,157 +1,209 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.jpg" type="image/x-icon" />
-    <title>Minebef Resource Packs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 20px;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: relative;
-        }
-        nav {
-            background-color: #eee;
-            padding: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        .back {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .folder, .file {
-            display: block;
-            margin: 10px auto;
-            padding: 10px;
-            width: 200px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+    /* Terug knop in de header */
+    #backButton {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+    }
+    nav {
+      background: #eee;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .view {
+      display: none;
+    }
+    .view.active {
+      display: block;
+    }
+    .download-item {
+      background: white;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .download-item a {
+      text-decoration: none;
+      color: #007bff;
+      margin-right: 10px;
+    }
+    .folder {
+      background: #fff;
+      padding: 10px;
+      margin: 10px auto;
+      width: 200px;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .password-container {
+      margin: 20px 0;
+    }
+    .password-container input {
+      padding: 8px;
+      font-size: 16px;
+    }
+    .password-container button {
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <button class="back hidden" onclick="goBack()">⬅</button>
-        <h1>Minebef Resource Packs, Server 6, 2024/2025</h1>
-    </header>
-    <nav>
-        <a href="server-ip.html">IP-Adres</a>
-        <a href="index.html">Minebef Wetgeving</a>
-        <a href="rollenverdeling.html">Rollen Verdeling</a>
-        <a href="resourcepacks.html">Resource Packs</a>
-    </nav>
-    
-    <div id="root">
-        <div class="folder" onclick="showFolder('serverPacks')">Server Packs</div>
-        <div class="folder" onclick="showFolder('goonPacks')">Goon Packs (Beveiligd)</div>
-        <div class="folder" onclick="showFolder('standAlonePacks')">Standalone Packs</div>
+  <header>
+    <button id="backButton" onclick="goBack()">⬅</button>
+    <h1>Download Website</h1>
+  </header>
+  <nav>
+    <!-- Deze nav-links gaan direct naar de gewenste view -->
+    <a href="serv">Server Packs</a>
+    <a onclick="showView('goonPacks')">Goon Packs</a>
+    <a onclick="showView('standalonePacks')">Standalone Packs</a>
+  </nav>
+  <div class="container">
+    <!-- Startview: categorie selectie -->
+    <div id="root" class="view active">
+      <h2>Selecteer een categorie</h2>
+      <div class="folder" onclick="showView('serverPacks')">Server Packs</div>
+      <div class="folder" onclick="showView('goonPacks')">Goon Packs</div>
+      <div class="folder" onclick="showView('standalonePacks')">Standalone Packs</div>
     </div>
     
-    <div id="serverPacks" class="hidden">
-        <h2>Server Packs</h2>
-        <div class="folder" onclick="showVersions('serverPacks', 9, 21)">Versies</div>
+    <!-- Server Packs view -->
+    <div id="serverPacks" class="view">
+      <h2>Server Packs</h2>
+      <!-- Voor elke versie twee downloadopties -->
+      <div class="download-item">
+        <p>Server Pack v1</p>
+        <a href="downloads/§6Server§4Pack §9v1 §2MET.zip" download>Met Custom Elytra</a>
+        <a href="downloads/§6Server§4Pack §9v1 §2ZONDER Custom Elytra.zip" download>Zonder Custom Elytra</a>
+      </div>
+      <div class="download-item">
+        <p>Server Pack v2</p>
+        <a href="downloads/§6Server§4Pack §9v2 §2MET.zip" download>Met Custom Elytra</a>
+        <a href="downloads/§6Server§4Pack §9v2 §2ZONDER Custom Elytra.zip" download>Zonder Custom Elytra</a>
+      </div>
+      <div class="download-item">
+        <p>Server Pack v3</p>
+        <a href="downloads/§6Server§4Pack §9v3 §2MET.zip" download>Met Custom Elytra</a>
+        <a href="downloads/§6Server§4Pack §9v3 §2ZONDER Custom Elytra.zip" download>Zonder Custom Elytra</a>
+      </div>
     </div>
     
-    <div id="goonPacks" class="hidden">
-        <h2>Goon Packs</h2>
-        <input type="password" id="goonPass" placeholder="Wachtwoord invoeren">
-        <button onclick="checkPassword()">Toegang</button>
-        <div id="goonContent" class="hidden">
-            <div class="folder" onclick="showVersions('goonPacks', 1, 5)">Versies</div>
+    <!-- Goon Packs view -->
+    <div id="goonPacks" class="view">
+      <h2>Goon Packs</h2>
+      <!-- Inhoud wordt pas getoond na correct wachtwoord -->
+      <div id="goonPacksContent" style="display: none;">
+        <div class="download-item">
+          <p>Goon Pack v1</p>
+          <a href="downloads/goonpack_v1.zip" download>Download</a>
         </div>
+        <div class="download-item">
+          <p>Goon Pack v2</p>
+          <a href="downloads/goonpack_v2.zip" download>Download</a>
+        </div>
+      </div>
+      <div id="passwordSection" class="password-container">
+        <input type="password" id="goonPassword" placeholder="Wachtwoord invoeren">
+        <button onclick="checkGoonPassword()">Toegang</button>
+      </div>
     </div>
     
-    <div id="standAlonePacks" class="hidden">
-        <h2>Standalone Packs</h2>
-        <div class="folder" onclick="showDownload('ColdPlayPack')">ColdPlayPack</div>
+    <!-- Standalone Packs view -->
+    <div id="standalonePacks" class="view">
+      <h2>Standalone Packs</h2>
+      <div class="download-item">
+        <p>Standalone Pack</p>
+        <a href="downloads/standalonepack.zip" download>Download</a>
+      </div>
     </div>
+  </div>
+  
+  <script>
+    // Geschiedenisstack voor navigatie tussen views
+    let historyStack = ['root'];
     
-    <div id="versions" class="hidden">
-        <h2>Kies een versie</h2>
-        <div id="versionList"></div>
-    </div>
+    // Functie om een view te tonen en op te slaan in de stack
+    function showView(viewId) {
+      // Verberg huidige view
+      document.getElementById(historyStack[historyStack.length - 1]).classList.remove('active');
+      // Toon de nieuwe view
+      document.getElementById(viewId).classList.add('active');
+      // Sla de nieuwe view op in de geschiedenis
+      historyStack.push(viewId);
+      updateBackButton();
+    }
     
-    <div id="downloadOptions" class="hidden">
-        <h2>Download Opties</h2>
-        <button id="downloadWithElytra">Met Custom Elytra</button>
-        <button id="downloadWithoutElytra">Zonder Custom Elytra</button>
-    </div>
+    // Terug functie: verwijder huidige view en toon de vorige
+    function goBack() {
+      if(historyStack.length > 1) {
+        // Verberg de huidige view
+        let current = historyStack.pop();
+        document.getElementById(current).classList.remove('active');
+        // Toon de vorige view
+        let previous = historyStack[historyStack.length - 1];
+        document.getElementById(previous).classList.add('active');
+      }
+      updateBackButton();
+    }
     
-    <script>
-        let historyStack = ['root'];
-
-        function showFolder(folderId) {
-            document.getElementById(historyStack[historyStack.length - 1]).classList.add('hidden');
-            document.getElementById(folderId).classList.remove('hidden');
-            historyStack.push(folderId);
-            document.querySelector('.back').classList.remove('hidden');
-        }
-        
-        function showVersions(type, start, end) {
-            document.getElementById(historyStack[historyStack.length - 1]).classList.add('hidden');
-            document.getElementById('versions').classList.remove('hidden');
-            historyStack.push('versions');
-            let versionList = document.getElementById('versionList');
-            versionList.innerHTML = '';
-            for (let i = start; i <= end; i++) {
-                let btn = document.createElement('div');
-                btn.className = 'file';
-                btn.innerText = 'Versie ' + i;
-                btn.onclick = function() { showDownload(type + '_v' + i); };
-                versionList.appendChild(btn);
-            }
-        }
-        
-        function showDownload(packName) {
-            document.getElementById(historyStack[historyStack.length - 1]).classList.add('hidden');
-            document.getElementById('downloadOptions').classList.remove('hidden');
-            historyStack.push('downloadOptions');
-            document.getElementById('downloadWithElytra').onclick = function() { window.location.href = 'downloads/' + packName + '_elytra.zip'; };
-            document.getElementById('downloadWithoutElytra').onclick = function() { window.location.href = 'downloads/' + packName + '.zip'; };
-        }
-        
-        function checkPassword() {
-            let password = document.getElementById('goonPass').value;
-            if (password === 'OscarIsKnap') { 
-                document.getElementById('goonContent').classList.remove('hidden');
-            } else {
-                alert('Fout wachtwoord!');
-            }
-        }
-        
-        function goBack() {
-            if (historyStack.length > 1) {
-                document.getElementById(historyStack.pop()).classList.add('hidden');
-                document.getElementById(historyStack[historyStack.length - 1]).classList.remove('hidden');
-            }
-            if (historyStack.length === 1) {
-                document.querySelector('.back').classList.add('hidden');
-            }
-        }
-    </script>
+    // Update de zichtbaarheid van de terug knop
+    function updateBackButton() {
+      let backButton = document.getElementById('backButton');
+      if(historyStack.length > 1) {
+        backButton.style.display = 'block';
+      } else {
+        backButton.style.display = 'none';
+      }
+    }
+    
+    // Functie voor wachtwoordcontrole bij Goon Packs
+    function checkGoonPassword() {
+      let pwd = document.getElementById('goonPassword').value;
+      if (pwd === 'OscarIsKnap') {
+        document.getElementById('goonPacksContent').style.display = 'block';
+        document.getElementById('passwordSection').style.display = 'none';
+      } else {
+        alert('Fout wachtwoord!');
+      }
+    }
+  </script>
 </body>
 </html>
