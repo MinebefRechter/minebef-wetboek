@@ -83,6 +83,45 @@
       font-size: 16px;
       cursor: pointer;
     }
+.modal {
+    display: block; /* Change to 'none' if you want to hide by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Black with opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+
   </style>
 </head>
 <body>
@@ -101,6 +140,12 @@
   <div class="container">
     <!-- Startview: categorie selectie -->
     <div id="root" class="view active">
+<div id="warningModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>k ben hier nog niet klaar mee!</p>
+  </div>
+</div>
       <h2>Selecteer een categorie</h2>
       <div class="folder" onclick="showView('serverPacks')">Server Packs</div>
       <div class="folder" onclick="showView('goonPacks')">Goon Packs</div>
@@ -109,6 +154,12 @@
     
     <!-- Server Packs view -->
     <div id="serverPacks" class="view">
+<div id="warningModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>k ben hier nog niet klaar mee!</p>
+  </div>
+</div>
       <h2>Server Packs</h2>
       <!-- Voor elke versie twee downloadopties -->
       <div class="download-item">
@@ -201,6 +252,12 @@
     
     <!-- Goon Packs view -->
     <div id="goonPacks" class="view">
+<div id="warningModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>k ben hier nog niet klaar mee!</p>
+  </div>
+</div>
       <h2>Goon Packs</h2>
       <!-- Inhoud wordt pas getoond na correct wachtwoord -->
       <div id="goonPacksContent" style="display: none;">
@@ -221,6 +278,12 @@
     
     <!-- Standalone Packs view -->
     <div id="standalonePacks" class="view">
+<div id="warningModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>k ben hier nog niet klaar mee!</p>
+  </div>
+</div>
       <h2>Standalone Packs</h2>
       <div class="download-item">
         <p>Sugar Daddy PACK</p>
@@ -281,6 +344,9 @@
         alert('Fout wachtwoord!');
       }
     }
+  function closeModal() {
+    document.getElementById('warningModal').style.display = 'none';
+  }
   </script>
 </body>
 </html>
