@@ -1,245 +1,273 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.jpg" type="image/x-icon" />
-    <title>Download Website</title>
+ <link rel="icon" href=
+"logo.jpg"
+        type="image/x-icon" />
+    <title>Minebef Wetboek</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        margin: 0;
-      }
-      header {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 0;
-        text-align: center;
-        position: relative;
-      }
-      /* Terug knop in de header */
-      #backButton {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        display: none;
-      }
-      nav {
-        background: #eee;
-        padding: 10px;
-        text-align: center;
-      }
-      nav a {
-        margin: 0 10px;
-        text-decoration: none;
-        color: #333;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      .container {
-        padding: 20px;
-      }
-      .view {
-        display: none;
-      }
-      .view.active {
-        display: block;
-      }
-      .download-item {
-        background: white;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 4px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      }
-      .download-item a {
-        text-decoration: none;
-        color: #007bff;
-        margin-right: 10px;
-      }
-      .folder {
-        background: #fff;
-        padding: 10px;
-        margin: 10px auto;
-        width: 200px;
-        border-radius: 4px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        cursor: pointer;
-      }
-      .password-container {
-        margin: 20px 0;
-      }
-      .password-container input {
-        padding: 8px;
-        font-size: 16px;
-      }
-      .password-container button {
-        padding: 8px 12px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      .modal {
-        display: block; /* Change to 'none' if you want to hide by default */
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.5); /* Black with opacity */
-      }
-      .modal-content {
-        background-color: #cc0000;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 400px;
-        text-align: center;
-        border-radius: 4px;
-      }
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            margin: 20px;
+        }
+        .article {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <button id="backButton" onclick="goBack()">⬅</button>
-      <h1>Minebef Texturepacks, Server 6, 2024/2025</h1>
+        <h1>Minebef Wetboek, Server 6, 2024/2025</h1>
     </header>
     <nav>
-      <a href="index.html">Minebef Wetboek</a>
-      <a href="server-ip.html">IP-Adres</a>
-      <a href="rollenverdeling.html">Rollen Verdeling</a>
-      <a href="resourcepacks.html">Texture Packs</a>
+        <a href="server-ip.html">IP-Adres</a>
+        <a href="index.html">Minebef Wetgeving</a>
+        <a href="rollenverdeling.html">Rollen Verdeling</a>
+        <a href="resourcepacks.html">Texture Packs</a>
     </nav>
-    <div class="container">
-      <!-- Startview: categorie selectie -->
-      <div id="root" class="view active">
-        <div id="warningModal" class="modal">
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Ik ben hier nog niet klaar mee!</p>
-          </div>
+
+    <div class="content">
+<div id="1" class="article">
+            <h2>Artikel 0.1</h2>
+              <p><ol><h3>Rechtsprocessen.</h3>
+          
+    <li>Als iemand een van de wetten verbreekt heb <b>JIJ</b> recht om hem aan te klagen! Dit doe je door een ticket te maken in #rechtzaken.</li>
+<br>
+    <li>Dit kan je verwachten van de verwachten van de rechtzaak:
+        <ul>
+            <li>Een eerlijk process waar 1 vd 2 rechters zal worden gekozen om de zaak te overzien en behandelen.<br>Als je wilt wisselen van rechter moet je een geldige reden hebben</li>
+            <li>De straf van de schuldige bestaat vaak uit diamonds, het totale bedrag wordt door de rechter bepaalt.<br>In sommige omstandigheden zal er een andere straf worden uitgedeeld.</li>
+            <li>Je kan ook een advocaat 'inhuren' wie dit zijn kan je <a href="rollenverdeling.html">hier</a> vinden.</li>
+        </ul>
+    </li>
+<br>
+    <li>Als je niet de funds hebt om de straf te betalen, dan moet er op een andere manier worden betaald. Hoe en wat bepaald de rechter.</li>
+<br>    
+<li><u>Houd je je niet aan de opgelegde straf? Dan zullen er hogere straffen worden opgelegd. Dit kunnen ook straffen zijn zoals waarschuwingen of bans.</u></li>
+</ol>
+</p>
+
         </div>
-        <h2>Selecteer een categorie</h2>
-        <div class="folder" onclick="showView('serverPacks')">Server Packs</div>
-        <div class="folder" onclick="showView('goonPacks')">Goon Packs</div>
-        <div class="folder" onclick="showView('standalonePacks')">Standalone Packs</div>
-      </div>
-      
-      <!-- Server Packs view -->
-      <div id="serverPacks" class="view">
-        <h2>Server Packs</h2>
-        <!-- Voor elke versie downloaditems -->
-        <div class="download-item">
-          <p>Server Pack v4</p>
-          <a href="downloads/Minebef_Schnitzel_v4.zip" download>Download v4</a>
-        </div>
-        <!-- ... overige server packs ... -->
-      </div>
-      
-      <!-- Goon Packs view -->
-      <div id="goonPacks" class="view">
-        <h2>Goon Packs</h2>
-        <!-- Wachtwoordsectie voordat de inhoud wordt getoond -->
-        <div id="passwordSection" class="password-container">
-          <input type="password" id="goonPassword" placeholder="Wachtwoord invoeren">
-          <button onclick="checkGoonPassword()">Toegang</button>
-        </div>
-        <div id="goonPacksContent" style="display: none;">
-          <div class="download-item">
-            <p>Goon Pack Beta v1</p>
-            <a href="downloads/§aGoon §5Pack §4 18+ §n§3Beta v2§r.zip" download>Download</a>
-          </div>
-          <div class="download-item">
-            <p>Goon Pack Beta v2</p>
-            <a href="downloads/§aGoon §5Pack §4 18+ §n§3Beta v2§r.zip" download>Download</a>
-          </div>
-          <div class="download-item">
-            <p>Goon Pack v1</p>
-            <a href="downloads/§aGoon §5Pack §4 18+ §3v1.zip" download>Download</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Standalone Packs view -->
-      <div id="standalonePacks" class="view">
-        <h2>Standalone Packs</h2>
-        <div class="download-item">
-          <p>Sugar Daddy PACK</p>
-          <a href="Sugar Daddy PACK.zip" download>Download</a>
-        </div>
-        <div class="download-item">
-          <p>Simons ColdPlayPack</p>
-          <a href="downloads/§9Cold§1Play §6Pack §6voor simon §4v4.zip" download>Download</a>
-        </div>
-      </div>
-    </div>
     
-    <script>
-      // Geschiedenisstack voor navigatie tussen views
-      let historyStack = ['root'];
-      
-      function showView(viewId) {
-        // Verberg huidige view
-        document.getElementById(historyStack[historyStack.length - 1]).classList.remove('active');
-        // Toon de nieuwe view
-        document.getElementById(viewId).classList.add('active');
-        // Voeg toe aan de geschiedenisstack
-        historyStack.push(viewId);
-        updateBackButton();
-      }
-      
-      function goBack() {
-        if(historyStack.length > 1) {
-          let current = historyStack.pop();
-          document.getElementById(current).classList.remove('active');
-          let previous = historyStack[historyStack.length - 1];
-          document.getElementById(previous).classList.add('active');
-        }
-        updateBackButton();
-      }
-      
-      function updateBackButton() {
-        let backButton = document.getElementById('backButton');
-        backButton.style.display = (historyStack.length > 1) ? 'block' : 'none';
-      }
-      
-      function closeModal() {
-        document.getElementById('warningModal').style.display = 'none';
-      }
-      
-      // Wachtwoordcontrole voor de Goon Packs view
-      function checkGoonPassword() {
-        let pwd = document.getElementById('goonPassword').value;
-        if (pwd === 'OscarIsKnap') {
-          document.getElementById('goonPacksContent').style.display = 'block';
-          document.getElementById('passwordSection').style.display = 'none';
-        } else {
-          alert('Fout wachtwoord!');
-        }
-      }
-      
-      // Zorg dat de eerste view zichtbaar is
-      document.getElementById('root').classList.add('active');
-    </script>
-  </body>
+
+        <div id="1" class="article">
+            <h2>Artikel 1.1</h2>
+                  <p><ol> <h3>Killen is alleen toegestaan met reden.</h3>
+     
+    <li>Het is verboden om andere spelers te doden zonder een geldige en gerechtvaardigde reden.</li>
+<br>
+    <li>Onder een "geldige reden" wordt verstaan:
+        <ul>
+            <li>Zelfverdediging wanneer een speler jou of jouw eigendommen bedreigt.</li>
+            <li>Deelname aan een goedgekeurde PvP-activiteit of evenement, zoals een toernooi of oorlog tussen dorpen</li>
+            <li>Een expliciete uitdaging of overeenkomst tussen spelers voor een duel.</li>
+        </ul>
+    </li>
+<br>
+    <li>Het doden van spelers zonder reden, ook wel bekend als "random killing" of "spawn killing," wordt gezien als griefing en is strikt verboden.</li>
+<br>    
+<li><u>Overtreding van dit artikel kan leiden tot sancties, waaronder diamonds betalen, waarschuwingen of zelfs bans afhankelijk van de ernst en herhaling van de overtreding.<br>De uiteindelijke straf zal in alle gevallen bepaald worden door de rechter.</u></li>
+</ol>
+</p>
+
+        </div>
+        <div id="1" class="article">
+            <h2>Artikel 1.2</h2>
+            <p><ol>
+        <h3>Het stelen van andermans eigendommen.</h3>
+        <li>Het is niet toegestaan om iemands eigendommen te stelen , alleen onder geldige redens zal dit zijn toegestaan. Onder een "geldige reden" wordt verstaan:
+            <ul>
+                <li>Deelname aan een goedgekeurde PvP-activiteit of evenement waarin diefstal is toegestaan, denk aan een oorlog tussen 2 of meerdere dorpen.</li>
+                <li>Een expliciete uitdaging of overeenkomst tussen spelers waarin diefstal is toegestaan.</li>
+                <li>Het terugstelen van eigen eigendommen die onrechtmatig door een andere speler zijn gestolen.</li>
+            </ul>
+        </li>
+<br>
+        <li>Het stelen van items zonder reden, ook wel bekend als "chest looten" wordt beschouwd als kneuzig gedrag en is strikt verboden.</li>
+<br>    
+    <li><u>Overtreding van dit artikel kan leiden tot sancties, waaronder diamonds betalen, waarschuwingen of zelfs bans afhankelijk van de ernst en herhaling van de overtreding.<br>De uiteindelijke straf zal in alle gevallen bepaald worden door de rechter.</u></li>
+    </ol></p>
+        </div>
+   
+ <div id="1" class="article">
+            <h2>Artikel 1.3</h2>
+            <p><ol>
+        <h3>Het vernielen of vandaliseren van iemands eigendommen.</h3>
+        <li>Het is niet toegestaan om iemands eigendommen (dus ook huisdieren) te vernielen of vandaliseren, alleen onder geldige redens zal dit zijn toegestaan.Onder een "geldige reden" wordt verstaan:
+            <ul>
+                <li>Voorafaan afgesproken met de eigenaar.</li>
+                <li>Het opruimen/terug geven van de items (niet altijd van toepassing, rechter bepaalt).</li>
+                <li>Het 'terugpakprincipe' is gematigd toegestaan, dit houdt in dat in kleine gevallen het toegestaan is om iemand terug te pakken.<br> <b>LET OP</b> ga je te ver in het terug pakken? Dan ben jij wel verantwoordelijk</li>
+            </ul>
+        </li>
+<br>
+        <li>Het vernielen, vernietigen of vandaliseren van items zonder reden, ook wel bekend als "griefen" wordt beschouwd als slecht gedrag en is verboden.</li>
+        <br>
+                <li><u>Overtreding van dit artikel kan leiden tot sancties, waaronder diamonds betalen, waarschuwingen of zelfs bans afhankelijk van de ernst en herhaling van de overtreding.<br> De uiteindelijke straf zal in alle gevallen bepaald worden door de rechter.</u></li>
+    </ol></p>
+        </div>
+
+        <div id="1" class="article">
+        <h2>Artikel 1.4</h2>
+            <p><ol>
+        <h3>Het bouwen van objecten in/rondom iemands base</h3>
+        <li>Het is verboden om objecten te bouwen in/rondom iemands base. Het is alleen toegestaan als je 1 van de volgende redenen hebt:
+            <ul>
+                <li>Voorafaan afgesproken met de eigenaar.</li>
+                <li>Reclame maken voor je bedrijf (niet te groot).</li>
+                <li>Het 'terugpakprincipe' is gematigd toegestaan, dit houdt in dat in kleine gevallen het toegestaan is om iemand terug te pakken.<br> <b>LET OP</b> ga je te ver in het terug pakken? Dan ben jij wel verantwoordelijk</li>
+            </ul>
+        </li>
+<br>
+        <li>Je mag dus ook niet recht naast iemand je base bouwen zonder toestemming van de persoon die het eerst die locatie had geclaimed.</li>
+<br>
+        <li>Het plaatsen van objecten in iemands base zonder reden, ook wel bekend als "griefen" wordt beschouwd als gay gedrag en is verboden.</li>
+<br>    
+    <li><u>Overtreding van dit artikel kan leiden tot sancties, waaronder diamonds betalen, waarschuwingen of zelfs bans afhankelijk van de ernst en herhaling van de overtreding.<br> De uiteindelijke straf zal in alle gevallen bepaald worden door de rechter.</u></li>
+    </ol></p>
+            
+        </div>
+    
+        <div id="2" class="article">
+        <h2>Artikel 2.1</h2>
+            <p><ol>
+        <h3>Gebruik van hacks</h3>
+        <li>Het is niet toegestaan om hacks te gebruiken in Minebef.
+        </li>
+<br>
+        <li>Het is alleen toegestaan om bepaalde hacks te gebruiken als de meerderheid van de actieve spelers en de servereigenaar dat toestaat.</li>
+<br>
+        <li>De volgende mods vallen <b>NIET</b> onder hacks:
+<ul>
+<li>Fullbright of andere brightness mods.</li>
+<li>Replay mod (deels).</li>
+<li>Shulkerbox Tooltip.</li>
+<li>No Fog.</li>
+<li>Litematica (EasyPlace).</li>
+</ul>
+    
+</li>
+<br>
+        <li><u>Overtreding van dit artikel kan leiden tot sancties, waaronder accountreset, tijdelijke of zelfs permantente bans afhankelijk van de ernst en herhaling van de overtreding.<br> De uiteindelijke straf zal in alle gevallen van cheats bepaald worden door de servereigenaar.</u></li>
+    </ol></p>
+            
+        </div>
+
+        <div id="2" class="article">
+        <h2>Artikel 2.2</h2>
+            <p><ol>
+        <h3>Misbruik maken van /OP</h3>
+        <li>Het misbruik maken van adminrechten (/op) als servereigenaar of ander lid van '/op' is niet toegestaan.
+        </li>
+<br>
+        <li>Het gebruik van creative mode om bouwerken of items in te spawnen is niet toegestaan <br>Tenzij de meerderheid van de actieve leden toestemming geeft in een poll in de discord.</li>
+<br>
+        <li>De servereigenaar mag in sommige situaties zijn spectator mode gebruiken:
+<ul>
+<li>Wanneer er diefstal is geweest en de gestolen items liggen in een geheime kist</li>
+<li>XRAY controles.</li>
+<li>Glitches oplossen.</li>
+<li>Specifieke andere redenen (besproken met rechters).</li>
+
+</ul>
+
+</li>
+<br>
+        <li><u>Overtreding van dit artikel kan leiden tot sancties, waaronder accountreset, tijdelijke of zelfs permantente bans afhankelijk van de ernst en herhaling van de overtreding.<br> De uiteindelijke straf zal in alle gevallen van /op misbruik bepaald worden door de rechters en een poll in de discord.</u></li>
+    </ol></p>
+            
+        </div>
+        <div id="3" class="article">
+        <h2>Artikel 3.1</h2>
+            <p><ol>
+        <h3>Andermans farms/villagers gebruiken</h3>
+        <li>Je mag niet zomaar andermans farms/villagers gebruiken.
+<br>
+        </li>
+        <li>Het gebruiken van iemand anders' farms/villagers is illegaal. Je mag alleen farms/villagers gebruiken die communaal zijn of als je toestemming hebt om een prive-farm/villagers te gebruiken</li>
+<br>
+        <li>Deze farms zijn communaal:
+<ul>
+<li>Enderman farm</li>
+<li>Creeper farm </li>
+<li>Guardian farm </li>
+
+</ul>
+    
+</li>
+<br>
+        <li><u>Overtreding van dit artikel kan leiden tot sancties waaronder diamonds betalen of billekoek.</u></li>
+    </ol></p>
+            
+        </div>
+<br>
+
+ <div id="3" class="article">
+        <h2>Artikel 4.1</h2>
+            <p><ol>
+        <h3>Verstoren van rechtzaken</h3>
+        <li>Het verstoren van rechtzaken is niet toegestaan.
+<br>
+        </li>
+        <li>Tijdens de rechtzaken moet er absolute orde zijn in de macht van de rechter. De rechter zal je in discord muten en unmuten als je in de rechtzaal mag praten.</li>
+<br>
+        <li>Onder het verstoren van rechtzaken valt het volgende:
+<ul>
+<li>Mensen killen</li>
+<li>Jezelf unmuten en voor je beurt praten</li>
+<li>Rond rennen en op dingen klikken/drukken. (denk aan signs editten en trapdoors open- en dichtdoen)</li>
+<li>Op andere manieren de orde verstoren.</li>
+
+</ul>
+    
+</li>
+<br>
+        <li><u>Als je een positie als verdediger of aanklager hebt in de rechtzaal, en je verstoord de rechtzaak dan zal je de rechtzaak verliezen.<br>Ben je toeschouwer, jury of getuige? Dan wordt je uit de rechtzaal verwijderd en moet je een totaal van 64 diamonds betalen</u></li>
+    </ol></p>
+            
+        </div>
+
+    </div>
+
+ </div>
+
+    <footer>
+        &copy; Gemaakt door de Rechters in Minebef.
+    </footer>
+</body>
 </html>
