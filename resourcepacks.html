@@ -126,6 +126,14 @@
   </style>
 </head>
 <body>
+<div id="loginContainer" class="modal">
+  <div class="modal-content">
+    <h2>Voer het Admin-wachtwoord in</h2>
+    <input type="password" id="adminPassword" placeholder="Wachtwoord invoeren">
+    <button onclick="checkAdminPassword()">Toegang</button>
+  </div>
+</div>
+
   <header>
     <button id="backButton" onclick="goBack()">⬅</button>
     <h1>Minebef Texturepacks, Server 6, 2024/2025</h1>
@@ -335,6 +343,25 @@
   function closeModal() {
     document.getElementById('warningModal').style.display = 'none';
   }
+  const correctPassword = "OscarIsKnap"; // Verander dit naar je echte wachtwoord
+  
+  // Controleer of de gebruiker al is ingelogd
+  if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+    document.getElementById("loginContainer").style.display = "block";
+  } else {
+    document.getElementById("loginContainer").style.display = "none";
+  }
+
+  function checkAdminPassword() {
+    let inputPassword = document.getElementById("adminPassword").value;
+    if (inputPassword === correctPassword) {
+      sessionStorage.setItem("adminLoggedIn", "true"); // Bewaart de sessie
+      document.getElementById("loginContainer").style.display = "none";
+    } else {
+      alert("Fout wachtwoord! Toegang geweigerd.");
+    }
+  }
+
   </script>
 </body>
 </html>
