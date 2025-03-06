@@ -126,14 +126,16 @@
   </style>
 </head>
 <body>
-<div id="loginContainer" class="modal">
-  <div class="modal-content">
-    <h2>Voer het Admin-wachtwoord in</h2>
-    <input type="password" id="adminPassword" placeholder="Wachtwoord invoeren">
-    <button onclick="checkAdminPassword()">Toegang</button>
+ <div id="loginContainer" class="modal">
+    <div class="modal-content">
+      <h2>Voer het Admin-wachtwoord in</h2>
+      <input type="password" id="adminPassword" placeholder="Wachtwoord invoeren">
+      <button onclick="checkAdminPassword()">Toegang</button>
+    </div>
   </div>
-</div>
-
+ <!-- Overige content van de pagina -->
+  <h1>Protected Resource Page</h1>
+  <p>Alle content hier is alleen zichtbaar voor ingelogde admins.</p>
   <header>
     <button id="backButton" onclick="goBack()">⬅</button>
     <h1>Minebef Texturepacks, Server 6, 2024/2025</h1>
