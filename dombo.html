@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <link rel="icon" href="logo.jpg" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minebef FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #333;
+            margin-top: 5px;
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function toggleAnswer(element) {
+            var answer = element.nextElementSibling;
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Minebef vraagjes, Server 6, 2024/2025</h1>
+    </header>
+    <nav>
+        <a href="server-ip.html">IP-Adres</a>
+        <a href="index.html">Minebef Wetgeving</a>
+        <a href="rollenverdeling.html">Rollen Verdeling</a>
+        <a href="resourcepacks.html">Texture Packs</a>
+        <a href="dombo.html">domme tattas</a>
+    </nav>
+    <div class="content">
+        <h2>Jullie zijn kkr dom dus hier is wat uitleg</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Hoe moet je een dorpje maken in de dorpen discrod?</div>
+            <div class="faq-answer">!create-category <naam van je dorp (kan van alles zijn met emojis enz)> zo kan je het dorpje maken en dan krijg JIJ de rol, als je wil dat de rest van je team het kan zien doe je !give-role @teamgenoot .</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Waar kan ik de texture packs downloaden?</div>
+            <div class="faq-answer">binnekort hier op de website en anders op <a href="server-ip.html">MEGA.nz</a> website.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">pieter</div>
+            <div class="faq-answer"><a href="https://nl.linkedin.com/in/pjhvandenheuvel">linkedin</a> of <a href="https://www.instagram.com/pierredelacolline/?locale=no">insta</a>.</div>
+        </div>
+    </div>
+    <footer>
+        &copy; Gemaakt door het Minebef-team.
+    </footer>
+</body>
+</html>
